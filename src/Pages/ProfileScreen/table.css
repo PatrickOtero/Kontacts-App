@@ -1,0 +1,149 @@
+.table {
+  height: 386px;
+  width: 956px;
+
+  overflow: scroll;
+}
+
+.table-head {
+  max-width: 100%;
+  max-height: 46px;
+  background-color: #f4f0f0;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 20px;
+
+  gap: 216px;
+
+  font-size: 12px;
+  font-weight: 700px;
+}
+
+.table-line {
+  width: 100%;
+  height: 46px;
+
+  display: flex;
+
+  background-color: #fffafa;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.line-data {
+  display: flex;
+
+  align-items: center;
+
+  font-size: 12px;
+  font-weight: 400px;
+
+  width: 100%;
+
+  justify-content: space-between;
+}
+
+.line-nome {
+  flex: 1;
+
+  margin-left: 30px;
+}
+
+.line-email {
+  flex: 1;
+
+  margin-right: 30px;
+}
+
+.line-telefone {
+  flex: 1;
+  margin-right: 60px;
+}
+
+.line-icons {
+  max-width: 280px;
+  width: 140px;
+
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  margin-right: 18px;
+  gap: 16px;
+}
+
+img {
+  cursor: pointer;
+}
+
+.delete-modal {
+  background-color: tomato;
+  color: white;
+}
+
+.table-error-container {
+  animation: surgir 500ms;
+
+  background-color: brown;
+
+  border-radius: 20px;
+  color: white;
+
+  font-size: 18px;
+  text-align: center;
+
+  padding: 10px;
+
+  top: 140px;
+
+  position: absolute;
+}
+
+.modal-container-delete {
+  width: 300px;
+  height: 300px;
+
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+
+  border-radius: 20px;
+}
+
+.modal-container-delete-info {
+  display: flex;
+  flex-direction: column;
+
+  color: rgb(131, 122, 122);
+
+  font-size: 20px;
+
+  gap: 10px;
+}
+
+.modal-delete-bottom {
+  margin-top: 20px;
+  font-size: 25px;
+
+  background-color: rgba(128, 128, 128, 0.377);
+
+  border-radius: 30px;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-delete-inputs {
+  margin-top: 40px;
+
+  display: flex;
+  gap: 20px;
+}

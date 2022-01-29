@@ -1,0 +1,110 @@
+/* Modal de registro de contatos */
+
+.modal-backdrop {
+  position: absolute;
+  z-index: 1px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  min-width: 100%;
+  min-height: 100%;
+
+  background-color: #100f0f8f;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  height: 563px;
+  width: 476px;
+
+  border-radius: 8px;
+
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container img {
+  margin-left: auto;
+  margin-bottom: 16px;
+  margin-right: 30px;
+}
+
+.modal-container b {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.modal-inputs {
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 17px;
+
+  margin-bottom: 72px;
+}
+
+.modal-inputs input {
+  width: 364px;
+  padding: 16px;
+
+  border: 1px solid #e8e8e8;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+
+  color: #968b8b;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.modal-buttons button {
+  height: 50px;
+  width: 366px;
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+}
+
+.btn-add {
+  border: none;
+  background-color: #04c45c;
+
+  color: white;
+}
+
+.btn-red {
+  border: none;
+  background-color: #fb0615a6;
+  color: white;
+}
+
+.btn-add:hover {
+  background-color: #25f185;
+  cursor: pointer;
+}
+
+.btn-remove:hover {
+  background-color: #ee5a64a6;
+  cursor: pointer;
+}

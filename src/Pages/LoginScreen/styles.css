@@ -1,0 +1,169 @@
+.LoginScreen {
+  min-width: 100%;
+  min-height: 100%;
+
+  display: flex;
+}
+
+.login-backdrop {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  min-width: 100%;
+  min-height: 103.5%;
+
+  background-color: #100f0f8f;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-loading {
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: scale(2);
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.login-loader {
+  width: 50px;
+  height: 50px;
+
+  border: 6px solid tomato;
+  border-top: 6px solid yellowgreen;
+  border-radius: 50%;
+
+  animation: rotation 1s infinite;
+}
+
+@keyframes surgir {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.error-container {
+  animation: surgir 500ms;
+
+  background-color: brown;
+
+  border-radius: 20px;
+  color: white;
+
+  font-size: 18px;
+  text-align: center;
+
+  padding: 15px;
+
+  position: absolute;
+  top: 100px;
+}
+
+.image-container {
+  width: 50%;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+
+  width: 50%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.login-body {
+  max-height: 338px;
+  max-width: 477px;
+}
+
+.login-phrases b {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.login-phrases h1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+.login-inputs {
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 17px;
+
+  margin-bottom: 72px;
+}
+
+.login-inputs input {
+  max-width: 476px;
+  padding: 18px;
+
+  border: 1px solid #e8e8e8;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+
+  color: #968b8b;
+}
+
+.login-button button {
+  height: 50px;
+  width: 475px;
+  border-radius: 8px;
+
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+
+  border: none;
+  background-color: #04c45c;
+  color: white;
+}
+
+.login-button button:hover {
+  background-color: #25f185;
+  cursor: pointer;
+}
+
+.login-link-cadastro {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+
+  margin-top: 106px;
+}
