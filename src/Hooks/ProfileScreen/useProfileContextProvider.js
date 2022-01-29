@@ -33,8 +33,6 @@ function useProfileContextProvider() {
       if (dados) {
         setDadosContacts(dados);
       }
-
-      console.log(dadosContacts);
       setLoadingLogin(false);
     } catch (error) {
       console.log(error);
@@ -65,7 +63,6 @@ function useProfileContextProvider() {
       setNome("");
       setEmail("");
       setTelefone("");
-      console.log(addMessage);
 
       setUpdateList(!updateList);
       setLoadingLogin(false);
@@ -98,7 +95,6 @@ function useProfileContextProvider() {
       ).json();
 
       setEditMessage(dados);
-      console.log(editMessage);
       setLoadingLogin(false);
       setUpdateList(!updateList);
     } catch (error) {
@@ -123,7 +119,6 @@ function useProfileContextProvider() {
       ).json();
 
       setDeleteMessage(dados);
-      console.log(deleteMessage);
 
       setLoadingLogin(false);
       setUpdateList(!updateList);

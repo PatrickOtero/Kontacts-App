@@ -40,7 +40,6 @@ function useLoginContextProvider() {
         setNome(dados.usuario.nome);
         setDadosLogin(dados);
         setStorage(dados.token);
-        console.log(dados);
       }
 
       setLoadingLogin(false);
