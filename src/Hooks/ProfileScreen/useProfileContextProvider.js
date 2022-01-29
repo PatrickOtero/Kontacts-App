@@ -22,7 +22,7 @@ function useProfileContextProvider() {
     setLoadingLogin(true);
     try {
       const dados = await (
-        await fetch("http://localhost:3001/contatos", {
+        await fetch("https://kontacts-api-test.herokuapp.com/contatos", {
           method: "GET",
           headers: {
             Authorization: "Bearer " + storage,
@@ -51,7 +51,7 @@ function useProfileContextProvider() {
 
     try {
       const dados = await (
-        await fetch("http://localhost:3001/contatos", {
+        await fetch("https://kontacts-api-test.herokuapp.com/contatos", {
           method: "POST",
           body: JSON.stringify(body),
           headers: {
@@ -84,14 +84,17 @@ function useProfileContextProvider() {
 
     try {
       const dados = await (
-        await fetch("http://localhost:3001/contatos/" + contactId, {
-          method: "PUT",
-          body: JSON.stringify(body),
-          headers: {
-            "content-type": "application/json",
-            Authorization: "Bearer " + storage,
-          },
-        })
+        await fetch(
+          "https://kontacts-api-test.herokuapp.com/contatos/" + contactId,
+          {
+            method: "PUT",
+            body: JSON.stringify(body),
+            headers: {
+              "content-type": "application/json",
+              Authorization: "Bearer " + storage,
+            },
+          }
+        )
       ).json();
 
       setEditMessage(dados);
@@ -107,13 +110,16 @@ function useProfileContextProvider() {
     setLoadingLogin(true);
     try {
       const dados = await (
-        await fetch("http://localhost:3001/contatos/" + contactId, {
-          method: "DELETE",
-          headers: {
-            "content-type": "application/json",
-            Authorization: "Bearer " + storage,
-          },
-        })
+        await fetch(
+          "https://kontacts-api-test.herokuapp.com/contatos/" + contactId,
+          {
+            method: "DELETE",
+            headers: {
+              "content-type": "application/json",
+              Authorization: "Bearer " + storage,
+            },
+          }
+        )
       ).json();
 
       setDeleteMessage(dados);

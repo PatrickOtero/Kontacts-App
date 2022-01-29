@@ -29,7 +29,7 @@ function useLoginContextProvider() {
     };
     try {
       const dados = await (
-        await fetch("http://localhost:3001/login", {
+        await fetch("https://kontacts-api-test.herokuapp.com/login", {
           method: "POST",
           body: JSON.stringify(body),
           headers: { "content-type": "application/json" },

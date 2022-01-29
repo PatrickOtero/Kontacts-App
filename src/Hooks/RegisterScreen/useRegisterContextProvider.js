@@ -24,7 +24,7 @@ function useRegisterContextProvider() {
     };
     try {
       const dados = await (
-        await fetch("http://localhost:3001/usuarios", {
+        await fetch("https://kontacts-api-test.herokuapp.com/usuarios", {
           method: "POST",
           body: JSON.stringify(body),
           headers: { "content-type": "application/json" },
