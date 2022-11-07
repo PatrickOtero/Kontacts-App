@@ -8,5 +8,5 @@ Front-end para o aplicativo "Kontacts" exigido como mini-desafio pelo curso Prog
     2° - Selecione o instalador de acordo com o seu sistema operacional e arquitetura (32-bit ou 64-bit)
     3° - Ao abrir o instalador do Node, pressione o botão "next" até aparecer a opção de instalar um software chamado "Chocolatey". Não instale ele e prossiga até o final.
     4° - Clone este repositório para o seu computador, vá até a pasta clonada e execute seu terminal na mesma.
-    5° - Execute o comando no diretório raíz (onde está localizada a pasta "src"): "npm i" ou "yarn"
-    6° - Execute o comando no mesmo local: "npm start" ou "yarn start"
+    5° - Execute o comando no diretório raíz (onde está localizada a pasta "src"): "npm i"
+    6° - Execute o comando no mesmo local: "npm start"
