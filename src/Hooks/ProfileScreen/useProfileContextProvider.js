@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useLoginContext from "../../Hooks/LoginScreen/useLoginContext";
+import { apiAuth } from "../../services/axios"
 
 function useProfileContextProvider() {
   const [modal, setModal] = useState(false);
@@ -16,22 +17,15 @@ function useProfileContextProvider() {
   const [tableMessage, setTableMessage] = useState(false);
   const [updateList, setUpdateList] = useState(false);
 
-  const { storage, setLoadingLogin } = useLoginContext();
+  const { setLoadingLogin } = useLoginContext();
 
   const handleListContacts = async () => {
     setLoadingLogin(true);
     try {
-      const dados = await (
-        await fetch("https://kontacts-api-test.herokuapp.com/contatos", {
-          method: "GET",
-          headers: {
-            Authorization: "Bearer " + storage,
-          },
-        })
-      ).json();
+      const response = await apiAuth.get("/contatos")
 
-      if (dados) {
-        setDadosContacts(dados);
+      if (response.data) {
+        setDadosContacts(response.data);
       }
       setLoadingLogin(false);
     } catch (error) {
@@ -48,18 +42,9 @@ function useProfileContextProvider() {
     };
 
     try {
-      const dados = await (
-        await fetch("https://kontacts-api-test.herokuapp.com/contatos", {
-          method: "POST",
-          body: JSON.stringify(body),
-          headers: {
-            "content-type": "application/json",
-            Authorization: "Bearer " + storage,
-          },
-        })
-      ).json();
+      const response = await apiAuth.post("/contatos", body)
 
-      setAddMessage(dados);
+      setAddMessage(response.data);
       setNome("");
       setEmail("");
       setTelefone("");
@@ -67,7 +52,8 @@ function useProfileContextProvider() {
       setUpdateList(!updateList);
       setLoadingLogin(false);
     } catch (error) {
-      console.log(error);
+      setAddMessage(error.response.data);
+      setLoadingLogin(false);
     }
   };
 
@@ -80,50 +66,29 @@ function useProfileContextProvider() {
     };
 
     try {
-      const dados = await (
-        await fetch(
-          "https://kontacts-api-test.herokuapp.com/contatos/" + contactId,
-          {
-            method: "PUT",
-            body: JSON.stringify(body),
-            headers: {
-              "content-type": "application/json",
-              Authorization: "Bearer " + storage,
-            },
-          }
-        )
-      ).json();
+      const response = await apiAuth.put(`/contatos/${contactId}`, body)
 
-      setEditMessage(dados);
+      setEditMessage(response.data);
       setLoadingLogin(false);
       setUpdateList(!updateList);
     } catch (error) {
-      console.log(error);
+      setEditMessage(error.response.data);
+      setLoadingLogin(false);
     }
   };
 
   const handleDeleteContact = async (contactId) => {
     setLoadingLogin(true);
     try {
-      const dados = await (
-        await fetch(
-          "https://kontacts-api-test.herokuapp.com/contatos/" + contactId,
-          {
-            method: "DELETE",
-            headers: {
-              "content-type": "application/json",
-              Authorization: "Bearer " + storage,
-            },
-          }
-        )
-      ).json();
+      const response = await apiAuth.delete(`/contatos/${contactId}`)
 
-      setDeleteMessage(dados);
+      setDeleteMessage(response.data);
 
       setLoadingLogin(false);
       setUpdateList(!updateList);
     } catch (error) {
-      console.log(error);
+      setDeleteMessage(error.response.data);
+      setLoadingLogin(false);
     }
   };
 

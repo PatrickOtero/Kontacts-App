@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { api } from "../../services/axios"
 
 function useRegisterContextProvider() {
   const [nome, setNome] = useState("");
@@ -23,30 +24,18 @@ function useRegisterContextProvider() {
       senha,
     };
     try {
-      const dados = await (
-        await fetch("https://kontacts-api-test.herokuapp.com/usuarios", {
-          method: "POST",
-          body: JSON.stringify(body),
-          headers: { "content-type": "application/json" },
-        })
-      ).json();
+      const response = await api.post("/usuarios", body)
 
-      if (dados !== "O usuario foi cadastrado com sucesso!") {
-        setDadosRegister(dados);
-        setErrorRegister(true);
-      }
+      setDadosRegister(response.data);
 
-      if (dados === "O usuario foi cadastrado com sucesso!") {
-        setErrorRegister(true);
-        setDadosRegister(dados);
-        setNome("");
-        setEmail("");
-        setSenha("");
-      }
+      setNome("");
+      setEmail("");
+      setSenha("");
 
       setLoadingRegister(false);
     } catch (error) {
-      console.log({ mensagem: error.message });
+      setErrorRegister(true);
+      setDadosRegister(error.response.data);
       setLoadingRegister(false);
     }
   };

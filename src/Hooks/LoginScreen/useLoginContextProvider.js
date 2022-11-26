@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocalStorage } from "react-use";
+import { api } from "../../services/axios"
 
 function useLoginContextProvider() {
   const [dadosLogin, setDadosLogin] = useState([]);
@@ -28,24 +29,18 @@ function useLoginContextProvider() {
       senha,
     };
     try {
-      const dados = await (
-        await fetch("https://kontacts-api-test.herokuapp.com/login", {
-          method: "POST",
-          body: JSON.stringify(body),
-          headers: { "content-type": "application/json" },
-        })
-      ).json();
+      const response = await api.post("/login", body)
 
-      if (dados) {
-        setNome(dados.usuario.nome);
-        setDadosLogin(dados);
-        setStorage(dados.token);
+      if (response.data) {
+        setNome(response.data.usuario.nome);
+        setDadosLogin(response.data);
+        setStorage(response.data.token);
       }
 
       setLoadingLogin(false);
     } catch (error) {
       setErrorLogin(true);
-      console.log({ mensagem: error.message });
+      console.log({ mensagem: error.response.data.message });
       setLoadingLogin(false);
     }
   };

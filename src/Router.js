@@ -3,14 +3,14 @@ import "./App.css";
 import LoginScreen from "./Pages/LoginScreen";
 import ProfileScreen from "./Pages/ProfileScreen";
 //import { useLocalStorage } from "react-use";
-import { ContextLoginProvider } from "./Contexts/LoginScreen/";
+import { ContextLoginProvider } from "./Contexts/LoginScreen";
 import { ContextProfileProvider } from "./Contexts/ProfileScreen";
 import RegisterScreen from "./Pages/RegisterScreen";
 import { ContextRegisterProvider } from "./Contexts/RegisterScreen";
 
-function App() {
+function RouterFile() {
   return (
-    <div className="App">
+    <div className="Router">
       <Router>
         <ContextLoginProvider>
           <Routes>
@@ -32,4 +32,4 @@ function App() {
   );
 }
 
-export default App;
+export default RouterFile;
