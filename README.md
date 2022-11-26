@@ -4,7 +4,7 @@
 ### Link para testar online: https://kontacts-api-patrick-otero.onrender.com
 
 ## Descrição do projeto:
-	- O projeto consiste em um simples sistema que permite a criação e alteração de uma lista de contatos, com sistema de cadastro e login.
+- O projeto consiste em um simples sistema que permite a criação e alteração de uma lista de contatos, com sistema de cadastro e login.
 
 - Repositório de back-end: https://github.com/PatrickOtero/Kontacts-API
 
