@@ -1,7 +1,7 @@
 # Kontacts-App
 - Front-end para o aplicativo "Kontacts".
 
-### Link para testar online: https://kontacts-api-patrick-otero.onrender.com
+### Link para testar online: https://kontacts-web-app.netlify.app
 
 ## Descrição do projeto:
 - O projeto consiste em um simples sistema que permite a criação e alteração de uma lista de contatos, com sistema de cadastro e login.
