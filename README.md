@@ -3,6 +3,8 @@
 
 ### Link para testar online: https://kontacts-web-app.netlify.app
 
+OBS: A aplicação está bem básica, sem muitas validações. Em um futuro breve a aplicação será melhorada.
+
 ## Descrição do projeto:
 - O projeto consiste em um simples sistema que permite a criação e alteração de uma lista de contatos, com sistema de cadastro e login.
 
